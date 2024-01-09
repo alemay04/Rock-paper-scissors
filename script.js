@@ -73,14 +73,40 @@ function playRound(computerSelection, playerSelection){
         console.log("there is a problem :(")
     }
 }
+
+//computerSelection = getComputerChoice();
+//playerSelection = getPlayerChoice();
+
+
+//console.log(playerSelection);
+//console.log(computerSelection);
+//console.log(playRound(computerSelection,playerSelection));
+//console.log(scoreComputer);
+//console.log(scorePlayer);
+
+function game(){
+    for (let i = 1;i<=5;i++){
+        computerSelection = getComputerChoice();
+        playerSelection = getPlayerChoice();
+
+        console.log(playerSelection);
+        console.log(computerSelection);
+        console.log(playRound(computerSelection,playerSelection));
+
+        console.log(scoreComputer);
+        console.log(scorePlayer);
+    }
+    if (scoreComputer>scorePlayer){
+        console.log("Computer Wins the Game !");
+    }
+    else if (scorePlayer>scoreComputer){
+        console.log("Player Wins the Game !")
+    }
+    else {
+        console.log("It's a big Tie !")
+    }
+}
 scoreComputer=0;
 scorePlayer=0;
-computerSelection = getComputerChoice();
-playerSelection = getPlayerChoice();
 
-
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(computerSelection,playerSelection));
-console.log(scoreComputer);
-console.log(scorePlayer);
+game()
