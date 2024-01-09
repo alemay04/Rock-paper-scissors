@@ -29,10 +29,6 @@ function getPlayerChoice(){
 }
 //looking good so far//
 
-let playerSelection = getPlayerChoice();
-let computerSelection = getComputerChoice();
-
-
 function playRound(computerSelection, playerSelection){
     if (computerSelection ==="rock"){
         if (playerSelection==="rock"){
@@ -77,27 +73,14 @@ function playRound(computerSelection, playerSelection){
         console.log("there is a problem :(")
     }
 }
-//console.log(playerSelection)
-//console.log(computerSelection)
-//console.log(playRound(computerSelection,playerSelection))
-let scorePlayer = 0;
-let scoreComputer = 0;
+scoreComputer=0;
+scorePlayer=0;
+computerSelection = getComputerChoice();
+playerSelection = getPlayerChoice();
 
-function game(){
-    for (let i = 1;i<=5;i++){
 
-        playRound(computerSelection,playerSelection);
-    }
-    console.log(scorePlayer);
-    console.log(scoreComputer);
-
-    if (scoreComputer > scorePlayer){
-        console.log("Computer Wins the Game !")
-    }
-    else {
-        console.log("Player Wins the Game !")
-    }
-    
-
-}
-game()
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(computerSelection,playerSelection));
+console.log(scoreComputer);
+console.log(scorePlayer);
