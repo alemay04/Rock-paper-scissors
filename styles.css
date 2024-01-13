@@ -1,0 +1,76 @@
+body{
+    background-color: cornflowerblue;
+}
+
+h1{
+    font-size: 48px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.leaderboard{
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: 24px;
+}
+.player{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+.computer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+#player{
+    font-size: 24px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#computer{
+    font-size: 24px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#playerScore{
+    font-size: 24px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#computerScore{
+    font-size: 24px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#result{
+    text-align: center;
+    margin: 48px;
+    font-size: 48px;
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#choice{
+   
+    display: flex;
+    justify-content: space-around;
+    padding: 0 96px;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+button{
+    width: 200px;
+    height: 200px;
+    background-color: lightskyblue;
+    border-radius: 25px;
+    border-color: black;
+}

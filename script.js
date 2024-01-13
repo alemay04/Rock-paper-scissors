@@ -12,7 +12,7 @@ function getComputerChoice(){
         return "scissors";
     }
 }
-//console.log(getComputerChoice())//
+
 //Still good :)//
 
 function getPlayerChoice(){
@@ -30,16 +30,19 @@ function getPlayerChoice(){
 //looking good so far//
 
 function playRound(computerSelection, playerSelection){
+    
     if (computerSelection ==="rock"){
         if (playerSelection==="rock"){
             return "It's a tie !";
         }
         else if (playerSelection==="paper"){
             scorePlayer++;
+            scoreP.textContent =  scorePlayer;
             return "Player Wins !";
         }
         else{
             scoreComputer++;
+            scoreC.textContent =  scoreComputer;
             return "Computer Wins !";
         }
     }
@@ -49,10 +52,12 @@ function playRound(computerSelection, playerSelection){
         }
         else if (playerSelection==="scissors"){
             scorePlayer++;
+            scoreP.textContent =  scorePlayer;
             return "Player Wins !";
         }
         else{
             scoreComputer++;
+            scoreC.textContent =  scoreComputer;
             return "Computer Wins !";
         }
     }
@@ -62,10 +67,12 @@ function playRound(computerSelection, playerSelection){
         }
         else if (playerSelection==="rock"){
             scorePlayer++;
+            scoreP.textContent =  scorePlayer;
             return "Player Wins !";
         }
         else{
             scoreComputer++;
+            scoreC.textContent =  scoreComputer;
             return "Computer Wins !";
         }
     }
@@ -73,40 +80,63 @@ function playRound(computerSelection, playerSelection){
         console.log("there is a problem :(")
     }
 }
-
-//computerSelection = getComputerChoice();
-//playerSelection = getPlayerChoice();
-
-
-//console.log(playerSelection);
-//console.log(computerSelection);
-//console.log(playRound(computerSelection,playerSelection));
-//console.log(scoreComputer);
-//console.log(scorePlayer);
-
-function game(){
-    for (let i = 1;i<=5;i++){
-        computerSelection = getComputerChoice();
-        playerSelection = getPlayerChoice();
-
-        console.log(playerSelection);
-        console.log(computerSelection);
-        console.log(playRound(computerSelection,playerSelection));
-
-        console.log(scoreComputer);
-        console.log(scorePlayer);
+function win(){
+    if (scoreComputer === 5){
+        alert("Computer wins the Game");
     }
-    if (scoreComputer>scorePlayer){
-        console.log("Computer Wins the Game !");
-    }
-    else if (scorePlayer>scoreComputer){
-        console.log("Player Wins the Game !")
-    }
-    else {
-        console.log("It's a big Tie !")
+    else if (scorePlayer === 5){
+        alert("Player wins the Game");
     }
 }
-scoreComputer=0;
-scorePlayer=0;
 
-game()
+const rockChoice = document.querySelector("#rockBtn");
+const paperChoice = document.querySelector("#paperBtn");
+const scissorsChoice = document.querySelector("#scissorsBtn");
+const player = document.querySelector("#player");
+const computer = document.querySelector("#computer");
+const scoreP = document.querySelector("#playerScore");
+const scoreC = document.querySelector("#computerScore");
+const result = document.querySelector("#result");
+
+let scoreComputer = 0;
+let scorePlayer = 0;
+scoreC.textContent= scoreComputer;
+scoreP.textContent= scorePlayer;
+
+player.textContent = "Player " ;
+computer.textContent = "Computer ";
+
+
+rockChoice.addEventListener('click', () =>{
+
+     const computerSelection = getComputerChoice()
+     const playerSelection = "rock";
+     player.textContent = "Player : " + playerSelection;
+     computer.textContent = "Computer : "  + computerSelection;
+     result.textContent = playRound(computerSelection, playerSelection);
+     win()
+    
+})
+
+paperChoice.addEventListener('click', () =>{
+
+    const computerSelection = getComputerChoice()
+    const playerSelection = "paper";
+    player.textContent = "Player : " + playerSelection;
+    computer.textContent = "Computer : "  + computerSelection;
+    result.textContent = playRound(computerSelection, playerSelection);
+    win()
+})
+
+scissorsChoice.addEventListener('click', () =>{   
+    const computerSelection = getComputerChoice();
+    const playerSelection = "scissors";
+    player.textContent = "Player : " + playerSelection;
+    computer.textContent = "Computer : "  + computerSelection;
+    result.textContent = playRound(computerSelection, playerSelection);
+    win()
+})
+
+
+
+
